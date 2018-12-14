@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+
 # coding: utf-8
 
 # In[1]:
 
 
-get_ipython().run_line_magic('matplotlib', 'inline')
+# get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # 
@@ -119,7 +119,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 # desired size of the output image
-imsize = 500 if torch.cuda.is_available() else 128  # use small size if no gpu
+imsize = 1024 if torch.cuda.is_available() else 128  # use small size if no gpu
 
 loader = transforms.Compose([
     transforms.Resize(imsize),  # scale imported image
@@ -133,7 +133,7 @@ def image_loader(image_name):
     return image.to(device, torch.float)
 
 
-style_img = image_loader("./data/images/neural-style/X-23 007-011.jpg")
+style_img = image_loader("./data/9styles/composition_vii.jpg")
 content_img = image_loader("./data/images/neural-style/Ben Reilly - Scarlet Spider (2017-) 016-010.jpg")
 print(style_img.size())
 print(content_img.size())
@@ -546,15 +546,9 @@ plt.ioff()
 plt.show()
 
 
-# In[ ]:
+# In[16]:
 
 
 import torchvision.utils as utils
 utils.save_image(output, "woman-with-hat-matisse_vgg.png")
-
-
-# In[ ]:
-
-
-
 

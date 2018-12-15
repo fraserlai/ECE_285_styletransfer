@@ -1,8 +1,2 @@
-flask
-flask_restful
-flask_script
-flask_migrate
-marshmallow
-flask_sqlalchemy
-flask_marshmallow
-marshmallow-sqlalchemy
+opencv-python
+shapely
